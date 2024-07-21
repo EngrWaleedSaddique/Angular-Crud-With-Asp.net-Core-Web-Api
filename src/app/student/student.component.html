@@ -1,0 +1,35 @@
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    <tr *ngFor="let item of students">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.country}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.address}}</td>
+        <td>
+            <a  routerLink="../edit-student/{{item.id}}">Edit</a>
+            <a  (click)="deleteStudent(item.id)">Delete</a>
+        </td>
+    </tr>
+    </table>
+</div>
+<div>
+    <form #Student="ngForm" (ngSubmit)="addStudent(Student.value)" class="common-form">
+        <input class="form-control" ngModel name="name" type="text" placeholder="Enter Name">
+        <input class="form-control" ngModel name="phone" type="text" placeholder="Enter Phone">
+        <input class="form-control" ngModel name="country" type="text" placeholder="Enter Country">
+        <input class="form-control" ngModel name="City" type="text" placeholder="Enter City">
+        <input class="form-control" ngModel name="Address" type="text" placeholder="Enter Address">
+        <button class="form-button">Submit</button>
+    </form>
+</div>

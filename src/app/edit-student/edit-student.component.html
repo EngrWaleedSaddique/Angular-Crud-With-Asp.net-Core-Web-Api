@@ -1,0 +1,10 @@
+<p>edit-student works!</p>
+<form #Student="ngForm" (ngSubmit)="editStudent(Student.value)" class="common-form">
+    <input type="hidden" name="id" [(ngModel)]="tempStudent.id"/>
+    <input class="form-control"  name="name" [(ngModel)]="tempStudent.name" placeholder="Enter Name">
+    <input class="form-control" name="phone" type="text" [(ngModel)]="tempStudent.phone" placeholder="Enter Phone">
+    <input class="form-control" name="country" type="text" [(ngModel)]="tempStudent.country"  placeholder="Enter Country">
+    <input class="form-control" name="City" type="text" [(ngModel)]="tempStudent.city"  placeholder="Enter City">
+    <input class="form-control" name="Address" type="text" [(ngModel)]="tempStudent.address" placeholder="Enter Address">
+    <button class="form-button">Submit</button>
+</form>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SellerService } from './services/seller.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ecommerce';
+  constructor(private seller:SellerService) {
+    
+  }
+  ngOnInit():void{
+    this.seller.reloadSeller();
+  }
+
 }
